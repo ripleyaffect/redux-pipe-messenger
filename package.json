@@ -12,7 +12,9 @@
     "node": "6.2.1"
   },
   "dependencies": {
+    "css-loader": "^0.25.0",
     "express": "^4.14.0",
+    "less-loader": "^2.2.3",
     "lodash": "^4.16.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -20,7 +22,8 @@
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "socket.io": "^1.5.0",
-    "socket.io-client": "^1.5.0"
+    "socket.io-client": "^1.5.0",
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
