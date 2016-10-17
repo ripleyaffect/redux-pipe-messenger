@@ -1,6 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 
-import { app } from './reducers'
+import { reduxPipe } from 'app/middlewares'
+import { app } from 'app/reducers'
 
 // Add dev tools in development
 const addDevTools = (
@@ -15,6 +16,10 @@ export default () => {
   return createStore(
     app,
     {},
-    composeEnhancers(applyMiddleware()) // Add middlewares here
+    composeEnhancers(
+      applyMiddleware(
+        reduxPipe({ url: '/' })
+      )
+    )
   )
 }

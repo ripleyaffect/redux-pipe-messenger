@@ -1,16 +1,25 @@
 import { combineReducers } from 'redux'
 
-export const value = (state=0, action) => {
+export const messages = (state=[], action) => {
   switch (action.type) {
-    case 'DECREMENT':
-      return state - 1
-    case 'INCREMENT':
-      return state + 1
+    case 'MESSAGE_SENT':
+    case 'MESSAGE_RECIEVED':
+      return state.concat(action.data)
+    default:
+      return state
+  }
+}
+
+export const username = (state='', action) => {
+  switch (action.type) {
+    case 'USERNAME_PICKED':
+      return action.data.username
     default:
       return state
   }
 }
 
 export const app = combineReducers({
-  value,
+  messages,
+  username,
 })

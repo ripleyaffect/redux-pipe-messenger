@@ -7,3 +7,5 @@ ReactDOM.render(
   <Root />,
   document.getElementById('root')
 )
+
+import io from 'socket.io-client'
